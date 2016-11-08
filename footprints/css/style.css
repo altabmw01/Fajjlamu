@@ -1,0 +1,10 @@
+.dashicons { text-align: center; text-transform: uppercase; }
+.dashicons i { font-size: 30px; }
+.dashicons h6 { font-weight: bold; }
+.dashicons a:hover { text-decoration: none; display: block; color: #1ABB9C; }
+.dashicons a:hover i { color: #1ABB9C; }
+.dashicons a:hover h6 { font-weight: bold; }
+
+.extra10 { padding-top: 10px; }
+.modal-dialog { width: 80% !important; }
+.extraheight { min-height: 220px;}

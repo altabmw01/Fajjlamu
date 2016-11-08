@@ -1,0 +1,45 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+/**
+ * @property Frontend_model $frontend_model frontend Model
+ * @property Profile_model $profile_model Directory Model
+ * @property Settings_model $settings_model Settings Model
+ * @property Panel_model $panel_model Panel Model
+ *
+ */
+class Frontend extends MX_Controller
+{
+    protected $data = array();
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model("common_model");
+        $this->load->model("profile_model");
+        $this->load->model("settings_model");
+        $this->load->model("panel_model");
+        $this->load->library(array('ion_auth', 'form_validation', 'upload', 'initial'));
+    }
+
+    public function index()
+    {
+        $this->data['settings'] = $this->get_settings();
+        $this->data['pages'] = $this->get_webpages();
+
+        $this->load->view('layouts/header', $this->data);
+        $this->load->view('common/settings', $this->data);
+        $this->load->view('layouts/footer', $this->data);
+    }
+
+    public function get_settings()
+    {
+        return $this->settings_model->getSystemSettings();
+    }
+    public function get_webpages()
+    {
+        return $this->frontend_model->getAllPagesFrontend();
+    }
+}
+
+?>

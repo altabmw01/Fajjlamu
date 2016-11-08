@@ -1,0 +1,6 @@
+<?php
+    define('HOSPITAL', 'localhost');
+    define('VISITOR', 'root');
+    define('FINGER', 'samraj77');
+    define('DOCTOR', 'campus');
+?>

@@ -1,0 +1,10 @@
+Controllers method
+
+public function small_letters_with_underscore() {
+}
+
+
+Model Method
+public function camelCase() {
+
+}
